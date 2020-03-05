@@ -29,6 +29,8 @@ Document Server and Nextcloud Docker installation will install the preconfigured
     **Please note**: you might need to wait a couple of minutes when all the containers are up and running after the above command.
 
 3. Now launch the browser and enter the webserver address. The Nextcloud wizard webpage will be opened. Enter all the necessary data to complete the wizard.
+open http://your_ip_address
+用户名：admin，管理密码 数据库选择mysql，数据库的帐号、密码、数据库名、数据库地址信息，见docker-compose.yml 文件 注意：配置的数据库地址localhost 为mariadb 配置完成之后，开启onlyoffice支持
 
 4. Go to the project folder and run the `set_configuration.sh` script:
 
@@ -39,6 +41,15 @@ Document Server and Nextcloud Docker installation will install the preconfigured
     ```
 
 Now you can enter Nextcloud and create a new document. It will be opened in ONLYOFFICE Document Server.
+
+5. stop it
+```
+    docker-compose stop
+```
+6. file path
+
+    * nginx配置文件 /root/docker-onlyoffice-nextcloud-mysql/nginx.conf
+    * nextcloud数据存储位置 /var/lib/docker/volumes/dockeronlyofficenextcloudmysql_app_data/_data
 
 
 ## ONLYOFFICE Document Server editions
